@@ -217,7 +217,7 @@ function Swipe(container, options) {
   var interval;
 
   function begin() {
-
+    clearTimeout(interval); // modify by zero
     interval = setTimeout(next, delay);
 
   }
@@ -484,6 +484,11 @@ function Swipe(container, options) {
 
       setup();
 
+    },
+    rebegin: function() { // add autoslide trigger api // modify by zero
+    
+      begin();
+      
     },
     slide: function(to, speed) {
 
